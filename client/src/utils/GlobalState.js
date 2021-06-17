@@ -7,11 +7,13 @@ const { Provider }  = StoreContext;
 const StoreProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useProductReducer({
         products: [],
+        cart: [],
+        cartOpen: false,
         categories: [],
         currentCategory: '',
     });
     // use this to confirm it works!
-    console.log(state);
+   // console.log(state);
     // if {...props} were not provided nothing would render
     return <Provider value={[state, dispatch]} {...props} />
     
